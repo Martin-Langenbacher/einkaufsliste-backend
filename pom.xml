@@ -16,6 +16,7 @@
 
 	<properties>
 		<java.version>11</java.version>
+		<springfox.version>2.9.2</springfox.version>
 	</properties>
 
 	<dependencies>
@@ -63,6 +64,35 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+		
+		
+		
+		<!-- spring fox -->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>${springfox.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>${springfox.version}</version>
+		</dependency>
+		
+		<!-- spring test -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<scope>test</scope>
+		</dependency>
+		
+		
+		
 	</dependencies>
 
 	<build>
@@ -75,3 +105,26 @@
 	</build>
 
 </project>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
