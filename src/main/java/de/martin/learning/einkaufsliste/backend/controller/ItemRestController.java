@@ -24,7 +24,7 @@ import de.martin.learning.einkaufsliste.backend.repository.ItemRepository;
 
 
 @RestController
-@RequestMapping("/api/v2/items/")
+@RequestMapping("/api/v2/items")
 public class ItemRestController {
 	
 	private final ItemRepository repository;
@@ -45,7 +45,7 @@ public class ItemRestController {
 
 	
 	
-	@GetMapping("{id}")
+	@GetMapping("/{id}")
 	public Item get(@PathVariable long id) {
 		return repository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
 		// ALTERNATIVE: --> return repository.findById(id).orElseThrow(() -> new ResourceNotFoundException(id));
@@ -60,7 +60,7 @@ public class ItemRestController {
 	
 	
 	
-	@PutMapping("{id}")
+	@PutMapping("/{id}")
 	public Item replace(@RequestBody Item newItem, @PathVariable Long id) {
 		return (Item) repository.findById(id).map(item -> {
 			item.setName(newItem.getName());
@@ -75,7 +75,7 @@ public class ItemRestController {
 
 
 	
-	@DeleteMapping("{id}")
+	@DeleteMapping("/{id}")
 	public void delete(@PathVariable Long id, HttpServletResponse deleteResponse) {
 		try {
 			repository.deleteById(id);
