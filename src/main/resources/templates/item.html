@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Item Edition</title>
+</head>
+<body>
+  <h1>Add an item</h1>
+  <form th:method="post" action="/save" th:object="${item}">
+  
+  <input th:field="*{id}" type="hidden" name="id"/>
+    <label for="name">Name:</label>
+    <input th:field="*{name}" id="name" type="text" name="name"
+      required />
+    <br>
+    <br>
+    <label for="remark">Remark:</label>
+    <input th:field="*{remark}" id="remark" type="text" name="remark"
+      required />
+  
+  <!-- 
+  
+    <input type="hidden" name="id"> <label for="title">Title:</label> <input id="title" type="text" name="title"
+      required><br>
+    <br> <label for="author">Author:</label> <input id="author" type="text" name="author" required><br>
+    <br> <input type="submit" value="Send">
+  @GetMapping({"/book", "/book/{id}"})
+  public String bookFormGet(
+      Model model,
+      @PathVariable (required = false) Long id) {
+
+    Book book = new Book();
+    if (id != null) {
+      Optional<Book> bookOptional = bookRepository.findById(id);
+      if (bookOptional.isPresent()) {
+        book = bookOptional.get();
+      }
+    }
+    model.addAttribute("book", book);
+    return "book";
+  }
+  
+    
+     -->
+    
+    
+    <br>
+    <br>
+    <input type="submit" value="Send" />
+  </form>
+  <br>
+  <br>
+  <a href="/items">Back to the administration</a>
+</body>
+</html>

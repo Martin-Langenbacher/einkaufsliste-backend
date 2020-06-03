@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Item Edition</title>
+</head>
+<body>
+  <h1>Result of search by name</h1>
+  <p th:text="${message}">Item gefunden:</p>
+  <p th:if="${item}">
+    <label for="name">Title:</label> <span th:text="${item.name}" id="name">Name</span> <br> <br> <label
+      for="remark">Remark:</label> <span th:text="${item.remark}" id="remark">Remark</span>
+  </p>
+  <br>
+  <br>
+  <a href="/search">Back to search form</a>
+</body>
+</html>
+

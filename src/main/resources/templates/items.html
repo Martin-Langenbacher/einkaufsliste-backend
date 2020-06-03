@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Books Administration</title>
+</head>
+<body>
+<a href="/item">Add a new item</a>
+<br>
+<a href="/search">Search items</a>
+<h1>Item shopping list</h1>
+<p th:if="${message}" th:text="${message}">Error Message</p>
+<ul>
+    <li th:each="item : ${items}">
+        <span th:text="'ID: ' + ${item.id}">Amount: $amount</span><br>
+        <span th:text="'Name: ' + ${item.name}">Name: $name</span><br>
+        <span th:text="'Amount: ' + ${item.amount}">Amount: $amount</span><br><br>
+    </li>
+</ul>
+<br><br>
+</body>
+</html>
+

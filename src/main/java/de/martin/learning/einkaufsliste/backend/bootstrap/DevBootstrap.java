@@ -31,7 +31,22 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent>{
 
 		private void initData() {
 			// Äpfel, Birnen, Salat und Käse, ...
+			Item item1 = new Item("Äpfel", 2, "2020-05-22", "Remark - if needed", true);
+			Item item2 = new Item("Birnen", 2, "2020-05-22", "Remark - if needed", true);
+			Item item3 = new Item("Salat", 2, "2020-05-22", "Remark - if needed", true);
+			Item item4 = new Item("Käse", 2, "2020-05-22", "Remark - if needed", true);
 			
+			this.itemRepository.save(item1);
+			this.itemRepository.save(item2);
+			this.itemRepository.save(item3);
+			this.itemRepository.save(item4);
+			
+			
+			
+			/* ==> 40 items, but with the same name !!!!!!!!!!!!!!!!!!!!!!!
+			// does not work with Thymeleaf-part !!!!!!!!!!!!!!!!!!!!!!!!!!
+			  
+			   
 			for (int i = 0; i < 10; i++) {
 				Item item1 = new Item("Äpfel", 2, "2020-05-22", "Remark - if needed", true);
 				Item item2 = new Item("Birnen", 2, "2020-05-22", "Remark - if needed", true);
@@ -43,7 +58,7 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent>{
 				this.itemRepository.save(item2);
 				this.itemRepository.save(item3);
 				this.itemRepository.save(item4);
-			}
+			} */
 			
 		}
 	

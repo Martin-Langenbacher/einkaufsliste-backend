@@ -27,7 +27,7 @@ public class Item {
 	private Long id;
 	private String name;
 	int amount;
-	String remark;
+	private String remark;
 	LocalDate lastBought;
 	boolean needed;
 	
